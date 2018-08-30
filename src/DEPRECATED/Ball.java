@@ -1,5 +1,16 @@
+package DEPRECATED;
+
 import javax.swing.*;
 import java.awt.*;
+
+/**
+ *
+ *  DEPRECATED
+ *
+ *
+ *
+ */
+
 
 class Ball {
 

@@ -1,3 +1,5 @@
+package DEPRECATED;
+
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
 import java.awt.*;
@@ -8,7 +10,15 @@ import java.awt.event.ComponentEvent;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class BallPanel extends JPanel implements ActionListener { 
+/**
+ *
+ *  DEPRECATED
+ *
+ *
+ *
+ */
+
+public class ballPanel extends JPanel implements ActionListener {
                                                                  
                                                                 
 
@@ -23,7 +33,7 @@ public class BallPanel extends JPanel implements ActionListener {
         repaint(); 
     }
 
-    BallPanel(){
+    ballPanel(){
         super(); 
         setPreferredSize(new Dimension(640,480)); 
         setBorder(new BevelBorder(BevelBorder.RAISED)); 
@@ -33,7 +43,7 @@ public class BallPanel extends JPanel implements ActionListener {
 
             @Override
             public void componentResized(ComponentEvent componentEvent) { 
-                if(BallPanel.this == componentEvent.getComponent()){ 
+                if(ballPanel.this == componentEvent.getComponent()){
                     for(Ball ball : balls){
                         ball.setBounds(getWidth(),getHeight()); 
                     }

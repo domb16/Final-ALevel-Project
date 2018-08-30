@@ -1,4 +1,4 @@
-
+package DEPRECATED;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -7,11 +7,17 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-
+/**
+ *
+ *  DEPRECATED
+ *
+ *
+ *
+ */
 public class Sim extends JFrame { 
 
     static final int DELAY = 20; 
-    static BallPanel ballContainer = new BallPanel();
+    static ballPanel ballContainer = new ballPanel();
     private boolean shouldFill = true;
     private JMenu fileMenu = new JMenu("Menu");
     private JMenuItem file = new JMenuItem("File");
@@ -29,14 +35,14 @@ public class Sim extends JFrame {
 
     public Sim() {
 
-        super("Sim"); 
+        super("DEPRECATED.Sim");
         setPreferredSize(new Dimension(1280, 720)); 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
         getContentPane().setLayout(new GridBagLayout()); 
         setResizable(false); 
         getContentPane().setBackground(Color.ORANGE); 
                                                     
-        setTitle("Ball Simulation by Dominic Balog");
+        setTitle("DEPRECATED.Ball Simulation by Dominic Balog");
         gui();
         pack();
         setVisible(true);
@@ -47,7 +53,7 @@ public class Sim extends JFrame {
 
     public void gui(){
 
-        JButton addBallButton = new JButton(new AbstractAction("Add Ball") {
+        JButton addBallButton = new JButton(new AbstractAction("Add DEPRECATED.Ball") {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 ballContainer.addBall();
@@ -78,7 +84,7 @@ public class Sim extends JFrame {
 
         getContentPane().add(addBallButton,c);
 
-        JButton removeButton = new JButton(new AbstractAction("Remove Ball") {
+        JButton removeButton = new JButton(new AbstractAction("Remove DEPRECATED.Ball") {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 try{
@@ -271,7 +277,7 @@ public class Sim extends JFrame {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(Sim::new);
+        SwingUtilities.invokeLater(() -> new Sim());
     }
 
 
