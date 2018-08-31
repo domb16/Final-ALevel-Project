@@ -103,16 +103,6 @@ class Ball {
         
         y +=  speedY*DT +0.5*gravity*DT*DT; 
 
-
-/*
-        x += speedX;
-        y += speedY;
-
-        if (x<0) { speedX=-speedX; x=0; }
-        if (y<0) { speedY=-speedY; y=0; }
-        if (x+RADIUS>maxX) { speedX=-speedX; x=maxX-RADIUS; }
-        if (y+RADIUS>maxY) { speedY=-speedY; y=maxY-RADIUS; }
-*/
     }
 
     void draw(Graphics g){

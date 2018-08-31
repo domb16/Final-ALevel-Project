@@ -23,7 +23,7 @@ public class ballPanel extends JPanel implements ActionListener {
                                                                 
 
     ArrayList<Ball> balls = new ArrayList<Ball>();
-    ArrayList<Speed> ballSpeed = new ArrayList<Speed>();
+//    ArrayList<Speed> ballSpeed = new ArrayList<Speed>();
     Random rnd = new Random(); 
 
     public void actionPerformed(ActionEvent e){ 
@@ -64,7 +64,7 @@ public class ballPanel extends JPanel implements ActionListener {
 
     void addBall(){
          balls.add(new Ball(this,rnd.nextInt(640),rnd.nextInt(240),640,480)); /*creates a new ball with the given parameters where the ball can be spawned
-                                                                                                         anywhere in the X axis but only at the top half of the JPanel*/
+                                                                                                         anywhere in the X axis but only at the top half of the CustomPanel*/
 
     }
 

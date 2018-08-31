@@ -14,23 +14,21 @@ public class Sim_remastered {
             + Each DEPRECATED.Ball should be handled in Ball_Panel
      */
     private static final Logger logger = Logger.getLogger(Sim_remastered.class.getName());
-    private List<Object> methodList = new ArrayList<>(){{
-//        add the list of runnables here then loop through it
+    private List<Runnable> methodList = new ArrayList<>(){{
+//      add the list of runnables here then loop through it
     }};
 
-    private void addClasses( Runnable methodCall){
+    private void addClasses(Runnable methodCall){
         methodList.add(methodCall);
     }
 
-    private Sim_remastered() {
-
+    public static void main(String[] args) {
         try {
 //            for (Runnable method : methodList ) {
             logger.info("Invoking main method: ");
 //          .run();
             // this is method reference for new Runnable(){ new <method> }
             SwingUtilities.invokeLater(GUI::new);
-            SwingUtilities.invokeLater(BallsPanel::new);
 
 
         } catch( Exception e ){
@@ -38,8 +36,5 @@ public class Sim_remastered {
         }
     }
 
-
-    public static void main(String[] args) {
-        new Sim_remastered();
-    }
 }
+

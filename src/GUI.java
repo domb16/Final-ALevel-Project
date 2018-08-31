@@ -4,7 +4,7 @@ import java.util.logging.Logger;
 import GUI.MainFrame;
 
 /*
- Make this class build the all the GUI elements together, JPanel, JFrame etc...
+ Make this class build the all the GUI elements together, CustomPanel, JFrame etc...
 
     + Add elements using a factory method for UI methods - e.g. - addElementToUI(type, basic config)
     + Add each element to a method which init the GUI class then
@@ -20,29 +20,26 @@ public class GUI implements Runnable {
     private BallsPanel bp;
     private static final Logger logger = Logger.getLogger(GUI.class.getName());
 
-    //    create a dictionary with some default values for GUI
-    public GUI() {
+    GUI() {
         /*
 
             + Set up the MainFrame
             + Set up the BallsPanel
          */
-        new MainFrame("Simulation Remastered");
-        bp = new BallsPanel();
-        logger.info("Current thread: "+ Thread.currentThread());
-
+        MainFrame mf = new MainFrame("Simulation Remastered");
+        logger.info("GUI class thread: "+ Thread.currentThread());
+        SwingUtilities.invokeLater(new BallsPanel(mf,1280,720));
+        logger.info("BallsPanel class thread: "+ Thread.currentThread());
+        logger.info("Number of threads running right now: "+ Thread.activeCount());
     }
 
     @Override
     public void run(){
 
-        new Timer(20, bp).start();
-
-
     }
     /*
-    private JPanel CreateBallPanel() {
-        JPanel DEPRECATED.ballPanel = new JPanel();
+    private CustomPanel CreateBallPanel() {
+        CustomPanel DEPRECATED.ballPanel = new CustomPanel();
         DEPRECATED.ballPanel.setPreferredSize();
         return DEPRECATED.ballPanel;
     }

@@ -14,6 +14,7 @@ public class MainFrame extends JFrame {
     }
 
     private void initFrame(){
+        frameInit();
         setJFrameSize(frameWidth, frameHeight);
         setFrameBG(frameColor);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -22,9 +23,10 @@ public class MainFrame extends JFrame {
         setVisible(true);
     }
 
-    private void addElementToPane(Component c, Object contraints){
+    public void addElementToPane(Component c, Object contraints){
         this.getContentPane().add(c, contraints);
     }
+
 
     private void setJFrameSize(int width, int height){
         this.frameWidth = width;
