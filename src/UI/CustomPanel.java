@@ -1,8 +1,11 @@
-package GUI;
+package UI;
 
-import java.awt.*;
+import javax.swing.JPanel;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Color;
 
-public class CustomPanel extends javax.swing.JPanel {
+public class CustomPanel extends JPanel  {
     private int width, height;
     private Container container;
     public CustomPanel(Container container, int width, int height) {

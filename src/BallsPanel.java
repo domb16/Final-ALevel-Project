@@ -1,7 +1,7 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import GUI.CustomPanel;
+import UI.CustomPanel;
 import javax.swing.*;
 import java.util.logging.Logger;
 
@@ -11,10 +11,9 @@ public class BallsPanel extends CustomPanel implements ActionListener, Runnable 
     private static final Logger logger = Logger.getLogger(BallsPanel.class.getName());
 
 
+
     BallsPanel(Container container, int panelWidth, int panelHeight) {
         super(container, panelWidth, panelHeight);
-//        int width = panelWidth;
-//        int height = panelHeight;
 
         logger.info(String.format("BallsPanel created with dimensions: %s %s",
                 panelWidth, panelHeight));
@@ -22,9 +21,6 @@ public class BallsPanel extends CustomPanel implements ActionListener, Runnable 
         initPanel();
         setBackground(Color.cyan);
         container.add(this);
-
-
-
     }
 
     @Override

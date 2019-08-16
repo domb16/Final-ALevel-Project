@@ -7,7 +7,7 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-/**
+/*
  *
  *  DEPRECATED
  *
@@ -22,9 +22,7 @@ public class Sim extends JFrame {
     private JMenu fileMenu = new JMenu("Menu");
     private JMenuItem file = new JMenuItem("File");
     private JMenuItem exit = new JMenuItem("Exit");
-
-    JSlider gravitySlider = new JSlider(JSlider.HORIZONTAL,-10,10,0); 
-                                                                                
+    JSlider gravitySlider = new JSlider(JSlider.HORIZONTAL,-10,10,0);
 
     JSlider xFrictionSlider = new JSlider(JSlider.HORIZONTAL,-100,100,0);
 
@@ -35,14 +33,14 @@ public class Sim extends JFrame {
 
     public Sim() {
 
-        super("DEPRECATED.Sim");
+        super("Sim");
         setPreferredSize(new Dimension(1280, 720)); 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
         getContentPane().setLayout(new GridBagLayout()); 
         setResizable(false); 
         getContentPane().setBackground(Color.ORANGE); 
                                                     
-        setTitle("DEPRECATED.Ball Simulation by Dominic Balog");
+        setTitle("Ball.Ball Simulation by Dominic Balog");
         gui();
         pack();
         setVisible(true);
@@ -53,7 +51,7 @@ public class Sim extends JFrame {
 
     public void gui(){
 
-        JButton addBallButton = new JButton(new AbstractAction("Add DEPRECATED.Ball") {
+        JButton addBallButton = new JButton(new AbstractAction("Add  Ball.Ball") {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 ballContainer.addBall();
@@ -84,7 +82,7 @@ public class Sim extends JFrame {
 
         getContentPane().add(addBallButton,c);
 
-        JButton removeButton = new JButton(new AbstractAction("Remove DEPRECATED.Ball") {
+        JButton removeButton = new JButton(new AbstractAction("Remove DEPRECATED.Ball.Ball") {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 try{
