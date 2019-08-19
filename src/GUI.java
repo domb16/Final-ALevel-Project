@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.util.logging.Logger;
 
+import Engine.CollisionDetection;
 import UI.MainFrame;
 
 /*
@@ -31,6 +32,8 @@ public class GUI implements Runnable {
         new BallsPanel(mf,1280,720);
         logger.info("BallsPanel class thread: "+ Thread.currentThread());
         logger.info("Number of threads running right now: "+ Thread.activeCount());
+        long test = new CollisionDetection().goodMask << 12L;
+        logger.info("test: " + test);
     }
     /*
     private CustomPanel CreateBallPanel() {

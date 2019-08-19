@@ -8,10 +8,10 @@ public class main {
     /*
     Initialise everything and run the program
         + Builder class - puts all other classes into something that works
-        + Initialise - Ball_Panel, UI, Each DEPRECATED.Ball.Ball.
+        + Initialise - Ball_Panel, UI, Each DEPRECATED.Shapes.Shapes.
             + Ball_Panel should be built in UI
             + UI should take care of all element building
-            + Each DEPRECATED.Ball.Ball should be handled in Ball_Panel
+            + Each DEPRECATED.Shapes.Shapes should be handled in Ball_Panel
      */
 
     public static void main(String[] args) {

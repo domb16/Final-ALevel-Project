@@ -2,21 +2,20 @@ package Engine;
 
 import Engine.Interfaces.ISpeed;
 import javax.vecmath.Vector2d;
-import java.lang.StrictMath;
 
-class CollisionDetection extends Vector2d implements ISpeed {
+public class CollisionDetection extends Vector2d implements ISpeed {
 
     public CollisionDetection() { }
 
     private double Distance(Vector2d a, Vector2d b){
         return (a.x - b.x) * (a.x - b.x)  + (a.y - b.y) * (a.y - b.y);
     }
-    private long goodMask; // 0xC840C04048404040 computed below
+    public long goodMask; // 0xC840C04048404040 computed below
     {
         for (int i=0; i<64; ++i) goodMask |= Long.MIN_VALUE >>> (i*i);
     }
 
-    public boolean isSquare(long x) {
+    private boolean isSquare(long x) {
         // This tests if the 6 least significant bits are right.
         // Moving the to be tested bit to the highest position saves us masking.
         if (goodMask << x >= 0) return false;
@@ -33,6 +32,10 @@ class CollisionDetection extends Vector2d implements ISpeed {
         final long tst = (long) Math.sqrt(x);
         return tst * tst == x;
     }
+//    private float SQRT(int num){
+//        if(isSquare((long) num))
+//            return
+//    }
 
 }
 

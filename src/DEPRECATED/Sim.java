@@ -40,7 +40,7 @@ public class Sim extends JFrame {
         setResizable(false); 
         getContentPane().setBackground(Color.ORANGE); 
                                                     
-        setTitle("Ball.Ball Simulation by Dominic Balog");
+        setTitle("Shapes.Shapes Simulation by Dominic Balog");
         gui();
         pack();
         setVisible(true);
@@ -51,7 +51,7 @@ public class Sim extends JFrame {
 
     public void gui(){
 
-        JButton addBallButton = new JButton(new AbstractAction("Add  Ball.Ball") {
+        JButton addBallButton = new JButton(new AbstractAction("Add  Shapes.Shapes") {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 ballContainer.addBall();
@@ -82,7 +82,7 @@ public class Sim extends JFrame {
 
         getContentPane().add(addBallButton,c);
 
-        JButton removeButton = new JButton(new AbstractAction("Remove DEPRECATED.Ball.Ball") {
+        JButton removeButton = new JButton(new AbstractAction("Remove DEPRECATED.Shapes.Shapes") {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 try{

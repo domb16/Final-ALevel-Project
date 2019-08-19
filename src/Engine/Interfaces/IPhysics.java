@@ -1,6 +1,6 @@
 package Engine.Interfaces;
 
-import Ball.Ball;
+import Shapes.Ball;
 
 public interface IPhysics {
     void move(Ball ballO);
