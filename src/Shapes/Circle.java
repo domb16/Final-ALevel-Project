@@ -18,33 +18,48 @@
 */
 
 package Shapes;
-import Engine.Body;
-import Engine.Matrix2D;
 
-public abstract class ShapeBase
+import Engine.ImpulseMath;
+import Shapes.ShapeBase;
+
+public class Circle extends ShapeBase
 {
 
-    public enum Type
+    public Circle( float r )
     {
-        Circle, Poly, Count
+        radius = r;
     }
 
-    public Body body;
-    public float radius;
-    public final Matrix2D u = new Matrix2D();
+    @Override
+    public ShapeBase clone()
+    {
+        return new Circle( radius );
+    }
 
-    public ShapeBase()
+    @Override
+    public void initialize()
+    {
+        computeMass( 1.0f );
+    }
+
+    @Override
+    public void computeMass( float density )
+    {
+        body.mass = ImpulseMath.PI * radius * radius * density;
+        body.invMass = (body.mass != 0.0f) ? 1.0f / body.mass : 0.0f;
+        body.inertia = body.mass * radius * radius;
+        body.invInertia = (body.inertia != 0.0f) ? 1.0f / body.inertia : 0.0f;
+    }
+
+    @Override
+    public void setOrient( float radians )
     {
     }
 
-    public abstract ShapeBase clone();
-
-    public abstract void initialize();
-
-    public abstract void computeMass( float density );
-
-    public abstract void setOrient( float radians );
-
-    public abstract Type getType();
+    @Override
+    public Type getType()
+    {
+        return Type.Circle;
+    }
 
 }

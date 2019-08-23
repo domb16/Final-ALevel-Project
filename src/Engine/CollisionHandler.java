@@ -17,34 +17,17 @@
     Port to Java by Philip Diffenderfer http://magnos.org
 */
 
-package Shapes;
-import Engine.Body;
-import Engine.Matrix2D;
+package Engine;
 
-public abstract class ShapeBase
+import Engine.Interfaces.ICollisionCallback;
+
+public class CollisionHandler
 {
 
-    public enum Type
-    {
-        Circle, Poly, Count
-    }
-
-    public Body body;
-    public float radius;
-    public final Matrix2D u = new Matrix2D();
-
-    public ShapeBase()
-    {
-    }
-
-    public abstract ShapeBase clone();
-
-    public abstract void initialize();
-
-    public abstract void computeMass( float density );
-
-    public abstract void setOrient( float radians );
-
-    public abstract Type getType();
+    public static ICollisionCallback[][] dispatch =
+            {
+                    { CollisionCircleCircle.instance, CollisionCirclePolygon.instance },
+                    { CollisionPolygonCircle.instance, CollisionPolygonPolygon.instance }
+            };
 
 }

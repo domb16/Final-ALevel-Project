@@ -1,8 +1,10 @@
 /*
     Copyright (c) 2013 Randy Gaul http://RandyGaul.net
+
     This software is provided 'as-is', without any express or implied
     warranty. In no event will the authors be held liable for any damages
     arising from the use of this software.
+
     Permission is granted to anyone to use this software for any purpose,
     including commercial applications, and to alter it and redistribute it
     freely, subject to the following restrictions:
@@ -17,34 +19,24 @@
     Port to Java by Philip Diffenderfer http://magnos.org
 */
 
-package Shapes;
-import Engine.Body;
-import Engine.Matrix2D;
+package Engine;
 
-public abstract class ShapeBase
+import Engine.Interfaces.ICollisionCallback;
+
+public class CollisionPolygonCircle implements ICollisionCallback
 {
 
-    public enum Type
+    public static final CollisionPolygonCircle instance = new CollisionPolygonCircle();
+
+    @Override
+    public void handleCollision(Manifold m, Body a, Body b)
     {
-        Circle, Poly, Count
+        CollisionCirclePolygon.instance.handleCollision(m, b, a);
+
+        if ( m.contactCount > 0 )
+        {
+            m.normal.negi();
+        }
     }
-
-    public Body body;
-    public float radius;
-    public final Matrix2D u = new Matrix2D();
-
-    public ShapeBase()
-    {
-    }
-
-    public abstract ShapeBase clone();
-
-    public abstract void initialize();
-
-    public abstract void computeMass( float density );
-
-    public abstract void setOrient( float radians );
-
-    public abstract Type getType();
 
 }
